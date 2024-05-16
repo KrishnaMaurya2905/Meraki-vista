@@ -1,11 +1,10 @@
 import React, { useState, useCallback } from "react";
 import { NavLink } from "react-router-dom";
-import StaggerText from "./StaggerText";
 import { PiInstagramLogo } from "react-icons/pi";
 import { FaLinkedinIn } from "react-icons/fa";
 import { RiTwitterXFill } from "react-icons/ri";
 import { FaDribbble } from "react-icons/fa";
-import Button from "./Button";
+import TextAnimation from "./TextAnimation";
 const Navbar = () => {
   const [openNav, setOpennav] = useState(false);
   return (
@@ -23,35 +22,40 @@ const PageTransition = ({ openNav, setOpennav }) => {
     {
       title: "HOME",
       image: "",
-      customclassName: "home",
+      customclassName1: "home1",
+      customclassName2: "home2",
       route: "/",
     },
     {
       title: "PROJECTS",
       image:
         "https://images.unsplash.com/photo-1715351191012-c67dd96e3483?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      customclassName: "projects",
+      customclassName1: "projects1",
+      customclassName2: "projects2",
       route: "/projects",
     },
     {
       title: "AGENCY",
       image:
         "https://images.unsplash.com/photo-1715353500110-d940cc09c007?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      customclassName: "agency",
+      customclassName1: "agency1",
+      customclassName2: "agency2",
       route: "/agency",
     },
     {
       title: "EXPERTIES",
       image:
         "https://images.unsplash.com/photo-1715624849529-3f99fafffee5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      customclassName: "experties",
+      customclassName1: "experties1",
+      customclassName2: "experties2",
       route: "/experties",
     },
     {
       title: "CONTACT",
       image:
         "https://images.unsplash.com/photo-1715647252838-a92275b3234d?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      customclassName: "contact",
+      customclassName1: "contact1",
+      customclassName2: "contact2",
       route: "/contact",
     },
   ];
@@ -217,7 +221,13 @@ const MobileNav = ({ openNav, setOpennav, routesdata }) => {
   );
 };
 
-const DesktopNav = ({ openNav, setOpennav, routesdata, image , handleMouseEnter}) => {
+const DesktopNav = ({
+  openNav,
+  setOpennav,
+  routesdata,
+  image,
+  handleMouseEnter,
+}) => {
   return (
     <div
       className={`fixed ${
@@ -247,9 +257,10 @@ const DesktopNav = ({ openNav, setOpennav, routesdata, image , handleMouseEnter}
               onMouseEnter={() => handleMouseEnter(item.image)}
               to={`${item.route}`}
             >
-              <StaggerText
+              <TextAnimation
+                customclassName1={item.customclassName1}
+                customclassName2={item.customclassName2}
                 text={item.title}
-                customclassName={item.customclassName}
               />
             </NavLink>
           ))}
