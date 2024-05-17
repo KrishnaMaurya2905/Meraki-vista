@@ -8,7 +8,7 @@ export default {
       colors: {
         Dominant: "#000000e9",
         Secondary: " #ffffffed",
-        Highliter:"#C1F139",
+        Highliter:"#D7FF35",
         Buttoncolor:"#313030ac"
       },
       fontFamily: {
@@ -21,7 +21,16 @@ export default {
       fontSize: {},
       backgroundImage:{
         Glitch:["url(https://assets-global.website-files.com/651d15fb8f27f4a03c14ae88/651d15fb8f27f4a03c14afa4_5d8424ac4ffed73f4d72846e_5c06f51d6e75c933fe05c728_giphy.gif)"]
-      }
+      },
+      transitionProperty: {
+        'transform': 'transform',
+      },
+      transitionTimingFunction: {
+        'custom-ease': 'cubic-bezier(0.9, -0.6, 0.32, 1.6)',
+      },
+      transitionDuration: {
+        '1000': '1000ms',
+      },
     },
   },
   plugins: [],
